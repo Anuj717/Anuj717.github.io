@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anuj Dubey | Portfolio</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#08111f;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+    /* ================= BACKGROUND GLOW ================= */
+
+    .blur{
+      position:fixed;
+      width:400px;
+      height:400px;
+      border-radius:50%;
+      filter:blur(120px);
+      z-index:-1;
+      opacity:0.5;
+    }
+
+    .blur1{
+      background:#06b6d4;
+      top:-100px;
+      left:-100px;
+    }
+
+    .blur2{
+      background:#7c3aed;
+      right:-100px;
+      top:200px;
+    }
+
+    .blur3{
+      background:#2563eb;
+      bottom:-100px;
+      left:40%;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    nav{
+      width:100%;
+      padding:25px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      backdrop-filter:blur(10px);
+      background:rgba(0,0,0,0.2);
+      z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:700;
+      color:#38bdf8;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      color:#d1d5db;
+      transition:0.3s;
+      font-size:15px;
+    }
+
+    .nav-links a:hover{
+      color:#38bdf8;
+    }
+
+    /* ================= HERO SECTION ================= */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:120px 10%;
+    }
+
+    .hero-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:60px;
+      align-items:center;
+    }
+
+    .hero-text h3{
+      color:#38bdf8;
+      margin-bottom:15px;
+      font-size:18px;
+      font-weight:500;
+    }
+
+    .hero-text h1{
+      font-size:70px;
+      line-height:1.1;
+      margin-bottom:20px;
+      font-weight:800;
+    }
+
+    .hero-text p{
+      color:#cbd5e1;
+      font-size:18px;
+      line-height:1.8;
+      max-width:600px;
+      margin-bottom:25px;
+    }
+
+    .typing{
+      color:#38bdf8;
+      font-size:24px;
+      font-weight:600;
+      margin-bottom:30px;
+      min-height:40px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:14px 30px;
+      border-radius:12px;
+      font-weight:600;
+      transition:0.3s;
+      display:inline-block;
+    }
+
+    .primary-btn{
+      background:#38bdf8;
+      color:#08111f;
+    }
+
+    .primary-btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 30px rgba(56,189,248,0.3);
+    }
+
+    .outline-btn{
+      border:1px solid rgba(255,255,255,0.2);
+      color:white;
+    }
+
+    .outline-btn:hover{
+      border-color:#38bdf8;
+      color:#38bdf8;
+    }
+
+    .hero-image{
+      display:flex;
+      justify-content:center;
+    }
+
+    .hero-image img{
+      width:350px;
+      border-radius:30px;
+      border:2px solid rgba(255,255,255,0.1);
+      box-shadow:0 0 50px rgba(56,189,248,0.2);
+    }
+	/* ===================== PROJECTS ===================== */
+
+.projects-container{
+
+  display:grid;
+
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+  gap:30px;
+
+  margin-top:50px;
+}
+
+.project-card{
+
+  background:rgba(255,255,255,0.03);
+
+  border:1px solid rgba(255,255,255,0.06);
+
+  border-radius:24px;
+
+  overflow:hidden;
+
+  transition:0.4s ease;
+
+  backdrop-filter:blur(15px);
+}
+
+.project-card:hover{
+
+  transform:translateY(-8px);
+
+  border-color:#38bdf8;
+
+  box-shadow:0 15px 35px rgba(56,189,248,0.15);
+}
+
+.project-image{
+
+  width:100%;
+
+  height:220px;
+
+  object-fit:cover;
+}
+
+.project-content{
+  padding:25px;
+}
+
+.project-content h3{
+  font-size:22px;
+  margin-bottom:15px;
+}
+
+.project-content p{
+  color:#cbd5e1;
+  margin-bottom:20px;
+  font-size:15px;
+}
+
+.project-tags{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-bottom:20px;
+}
+
+.project-tags span{
+
+  padding:8px 14px;
+
+  border-radius:12px;
+
+  background:rgba(56,189,248,0.12);
+
+  color:#38bdf8;
+
+  font-size:13px;
+
+  font-weight:500;
+}
+
+.project-links{
+
+  display:flex;
+
+  gap:15px;
+}
+
+.project-links a{
+
+  padding:10px 18px;
+
+  border-radius:12px;
+
+  background:rgba(255,255,255,0.05);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  transition:0.3s ease;
+
+  font-size:14px;
+
+  font-weight:500;
+}
+
+.project-links a:hover{
+
+  background:#38bdf8;
+
+  color:#08111f;
+}
+
+    /* ================= SECTION ================= */
+
+    section{
+      padding:100px 10%;
+    }
+
+    .section-title{
+      font-size:40px;
+      margin-bottom:20px;
+      text-align:center;
+      font-weight:800;
+    }
+
+    .section-subtitle{
+      text-align:center;
+      color:#94a3b8;
+      margin-bottom:60px;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:50px;
+      align-items:center;
+    }
+
+    .about-card{
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.05);
+      padding:40px;
+      border-radius:25px;
+      backdrop-filter:blur(10px);
+    }
+
+    .about-card p{
+      color:#cbd5e1;
+      line-height:1.8;
+      margin-bottom:20px;
+    }
+
+    /* ================= SKILLS ================= */
+
+    .skills-container{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      justify-content:center;
+    }
+
+    .skill{
+      padding:15px 25px;
+      border-radius:15px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    .skill:hover{
+      transform:translateY(-5px);
+      border-color:#38bdf8;
+      box-shadow:0 10px 25px rgba(56,189,248,0.15);
+    }
+
+    /* ================= JOURNEY ================= */
+
+    .timeline{
+      max-width:800px;
+      margin:auto;
+    }
+
+    .timeline-item{
+      background:rgba(255,255,255,0.03);
+      margin-bottom:25px;
+      padding:25px;
+      border-radius:20px;
+      border-left:4px solid #38bdf8;
+    }
+
+    .timeline-item h3{
+      margin-bottom:10px;
+    }
+
+    .timeline-item p{
+      color:#cbd5e1;
+      line-height:1.7;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-box{
+      max-width:700px;
+      margin:auto;
+      text-align:center;
+      background:rgba(255,255,255,0.03);
+      padding:50px;
+      border-radius:25px;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .contact-box p{
+      color:#cbd5e1;
+      margin:15px 0;
+    }
+
+    .socials{
+      margin-top:30px;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+    }
+
+    .socials a{
+      width:50px;
+      height:50px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      border-radius:50%;
+      background:rgba(255,255,255,0.05);
+      transition:0.3s;
+      font-size:20px;
+    }
+
+    .socials a:hover{
+      background:#38bdf8;
+      color:#08111f;
+      transform:translateY(-5px);
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      padding:30px;
+      text-align:center;
+      color:#94a3b8;
+      border-top:1px solid rgba(255,255,255,0.05);
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media(max-width:768px){
+
+      .hero-text h1{
+        font-size:45px;
+      }
+
+      nav{
+        padding:20px 5%;
+      }
+
+      section{
+        padding:80px 5%;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        padding-top:150px;
+      }
+
+      .hero-image img{
+        width:280px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Background Glow -->
+  <div class="blur blur1"></div>
+  <div class="blur blur2"></div>
+  <div class="blur blur3"></div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Anuj Dubey</div>
+	
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+	  <a href="#projects">Projects</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-container">
+
+      <div class="hero-text">
+
+        <h3>Hello, I'm</h3>
+
+        <h1>Anuj Dubey</h1>
+
+        <div class="typing" id="typing"></div>
+
+        <p>
+          Final year engineering student passionate about Cloud Computing,
+          DevOps and Data Analytics.
+          Currently building practical skills in AWS, Docker, Linux,
+          Python and SQL while preparing for modern tech roles.
+        </p>
+
+        <div class="buttons">
+
+          <a href="resume.pdf" class="btn primary-btn">
+            Download Resume
+          </a>
+
+          <a href="https://github.com/Anuj717" class="btn outline-btn">
+            GitHub
+          </a>
+
+          <a href="https://www.linkedin.com/" class="btn outline-btn">
+            LinkedIn
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+        <img src="images/about-me.png" alt="Anuj">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+
+    <h2 class="section-title">About Me</h2>
+    <p class="section-subtitle">
+      Learning cloud technologies and building practical solutions.
+    </p>
+
+    <div class="about">
+
+      <div class="about-card">
+
+        <p>
+          I'm Anuj Dubey, a final year engineering student from Mumbai
+          focused on Data Analytics, Cloud Computing and DevOps  .
+        </p>
+
+        <p>
+          I enjoy learning modern technologies like AWS, Docker,
+          Linux, Python and SQL while continuously improving my
+          problem-solving and technical skills.
+        </p>
+
+        <p>
+          Along with tech, I also enjoy teaching and mentoring students,
+          which has helped me improve communication and leadership skills.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+    <p class="section-subtitle">
+      Technologies and tools I work with
+    </p>
+
+    <div class="skills-container">
+
+      <div class="skills-container">
+
+  <!-- Data Analytics -->
+  <div class="skill">SQL</div>
+  <div class="skill">Python</div>
+  <div class="skill">Excel</div>
+  <div class="skill">Power BI</div>
+  <div class="skill">Tableau</div>
+  <div class="skill">Pandas</div>
+  <div class="skill">NumPy</div>
+  <div class="skill">Matplotlib</div>
+
+  <!-- Databases -->
+  <div class="skill">MySQL</div>
+
+  <!-- Programming -->
+  <div class="skill">C++</div>
+
+  <!-- Cloud & Tools -->
+  <div class="skill">AWS</div>
+  <div class="skill">Git & GitHub</div>
+
+  <!-- Concepts -->
+  <div class="skill">Data Cleaning</div>
+  <div class="skill">Data Visualization</div>
+  <div class="skill">EDA</div>
+  <div class="skill">Machine Learning Basics</div>
+
+</div>
+    </div>
+
+  </section>
+
+  <!-- JOURNEY -->
+  <section id="journey">
+
+  <h2 class="section-title">My Journey</h2>
+
+  <p class="section-subtitle">
+    Building strong foundations in Data Analytics, Cloud and modern technologies
+  </p>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <h3>Started Engineering Journey</h3>
+      <p>
+        Began my engineering journey with a strong interest in technology,
+        problem-solving and modern software tools while exploring different
+        domains in tech.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Developed Interest in Data Analytics</h3>
+      <p>
+        Started learning Data Analytics concepts including SQL, Python,
+        Excel and data visualization to understand how data helps businesses
+        make better decisions.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Worked on Analytics & Visualization Skills</h3>
+      <p>
+        Explored tools like Power BI, Tableau and Python libraries such as
+        Pandas and Matplotlib for data cleaning, analysis and dashboard creation.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Built Projects Using Real Datasets</h3>
+      <p>
+        Worked on beginner-level analytics and machine learning projects
+        using datasets to improve problem-solving, analytical thinking
+        and practical implementation skills.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Explored Cloud & Modern Technologies</h3>
+      <p>
+        Along with analytics, explored AWS Cloud fundamentals, Git and
+        modern development tools to build a broader understanding of
+        technology and scalable solutions.
+      </p>
+    </div>
+
+  </div>
+  <!-- ===================== PROJECTS ===================== -->
+
+<section id="projects">
+
+  <h2 class="section-title">Projects</h2>
+
+  <p class="section-subtitle">
+    Some projects showcasing my analytics and technical skills
+  </p>
+
+  <div class="projects-container">
+
+    <!-- Project 1 -->
+
+    <div class="project-card">
+
+      <img 
+      src="images/ipl-project.jpg" 
+      alt="IPL Score Predictor"
+      class="project-image">
+
+      <div class="project-content">
+
+        <h3>IPL Score Predictor</h3>
+
+        <p>
+          Built a Machine Learning based IPL score prediction model
+          using Python and real match datasets to predict first innings scores.
+        </p>
+
+        <div class="project-tags">
+
+          <span>Python</span>
+          <span>Machine Learning</span>
+          <span>Pandas</span>
+          <span>Jupyter</span>
+
+        </div>
+
+        <div class="project-links">
+
+          <a href="YOUR_GITHUB_LINK" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+
+          <a href="#">
+            <i class="fas fa-eye"></i> Preview
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Project 2 -->
+
+    <div class="project-card">
+
+      <img 
+      src="images/dashboard-project.jpg" 
+      alt="Data Analytics Dashboard"
+      class="project-image">
+
+      <div class="project-content">
+
+        <h3>Sales Analytics Dashboard</h3>
+
+        <p>
+          Created an interactive dashboard using Power BI
+          to analyze sales performance, customer insights
+          and business trends.
+        </p>
+
+        <div class="project-tags">
+
+          <span>Power BI</span>
+          <span>SQL</span>
+          <span>Excel</span>
+          <span>Data Visualization</span>
+
+        </div>
+
+        <div class="project-links">
+
+          <a href="YOUR_GITHUB_LINK" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+
+          <a href="#">
+            <i class="fas fa-eye"></i> Preview
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Project 3 -->
+
+    <div class="project-card">
+
+      <img 
+      src="images/aws-project.jpg" 
+      alt="AWS Resume Website"
+      class="project-image">
+
+      <div class="project-content">
+
+        <h3>AWS Resume Website</h3>
+
+        <p>
+          Hosted a personal portfolio website using AWS services
+          to understand cloud deployment and static website hosting.
+        </p>
+
+        <div class="project-tags">
+
+          <span>AWS</span>
+          <span>S3</span>
+          <span>CloudFront</span>
+          <span>HTML/CSS</span>
+
+        </div>
+
+        <div class="project-links">
+
+          <a href="https://github.com/Anuj717/Image-Optimisation-on-flyK" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+
+          <a href="#">
+            <i class="fas fa-eye"></i> Live</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</section>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <p class="section-subtitle">
+      Let's connect and build something amazing
+    </p>
+
+    <div class="contact-box">
+
+      <p><strong>Email:</strong> anujdubey7770@gmail.com</p>
+
+      <p><strong>Location:</strong> Mumbai, Maharashtra</p>
+
+      <p><strong>Phone:</strong> +91 7039963473</p>
+
+      <div class="socials">
+
+        <a href="https://github.com/Anuj717">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/anuj-dubey-b97b6a263/">
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="mailto:anujdubey7770@gmail.com">
+          <i class="fas fa-envelope"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Anuj Dubey. All Rights Reserved.
+  </footer>
+
+  <!-- Typing Animation -->
+
+  <script>
+
+    const texts = [
+      "Cloud Enthusiast",
+      "AWS Learner",
+      "DevOps Explorer",
+      "Python Developer",
+      "Data Analytics Aspirant"
+    ];
+
+    let speed = 100;
+    const textElement = document.getElementById("typing");
+
+    let textIndex = 0;
+    let charIndex = 0;
+
+    function typeWriter() {
+
+      if(charIndex < texts[textIndex].length){
+
+        textElement.innerHTML += texts[textIndex].charAt(charIndex);
+
+        charIndex++;
+
+        setTimeout(typeWriter, speed);
+
+      }
+
+      else{
+
+        setTimeout(eraseText, 1500);
+
+      }
+
+    }
+
+    function eraseText(){
+
+      if(textElement.innerHTML.length > 0){
+
+        textElement.innerHTML =
+        textElement.innerHTML.slice(0,-1);
+
+        setTimeout(eraseText,50);
+
+      }
+
+      else{
+
+        textIndex = (textIndex + 1) % texts.length;
+
+        charIndex = 0;
+
+        setTimeout(typeWriter,500);
+
+      }
+
+    }
+
+    window.onload = typeWriter;
+
+  </script>
+
+</body>
+</html>
